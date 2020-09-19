@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">PPR</string>
-    <string name="type_prime">Простые числа</string>
-    <string name="type_finabochi">Числа Финабоччи</string>
+    <string name="type_prime">Простые</string>
+    <string name="type_finabochi">Финабоччи</string>
 </resources>

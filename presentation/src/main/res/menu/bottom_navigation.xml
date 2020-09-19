@@ -3,9 +3,9 @@
     <item
         android:id="@+id/navigation_primes"
         android:icon="@drawable/ic_primes"
-        android:title="Простые" />
+        android:title="@string/type_prime" />
     <item
         android:id="@+id/navigation_fibonachi"
         android:icon="@drawable/ic_fibonachi"
-        android:title="Фибоначчи" />
+        android:title="@string/type_finabochi" />
 </menu>

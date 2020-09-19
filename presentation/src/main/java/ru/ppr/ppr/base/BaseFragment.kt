@@ -8,13 +8,11 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import io.reactivex.disposables.CompositeDisposable
 import ru.ppr.ppr.di.AppInjector
 
 abstract class BaseFragment<VM : BaseViewModel> : Fragment() {
 
     protected lateinit var viewModel: VM
-    protected var compositeDisposable = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,9 +47,4 @@ abstract class BaseFragment<VM : BaseViewModel> : Fragment() {
     abstract fun getLayoutId(): Int
 
     abstract fun provideViewModel(): VM
-
-    override fun onDestroy() {
-        super.onDestroy()
-        compositeDisposable.dispose()
-    }
 }
