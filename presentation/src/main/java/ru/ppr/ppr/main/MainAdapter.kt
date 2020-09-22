@@ -6,7 +6,7 @@ import kotlinx.android.synthetic.main.layout_date_view_holder.view.*
 import ru.ppr.ppr.R
 import ru.ppr.ppr.view.SyntheticViewHolder
 
-class MainAdapter : RecyclerView.Adapter<SyntheticViewHolder>() {
+class MainAdapter(val nearLastPosition: () -> Unit) : RecyclerView.Adapter<SyntheticViewHolder>() {
 
     private var dates = mutableListOf<Long>()
     private var lastDatesSize = 0
@@ -23,6 +23,9 @@ class MainAdapter : RecyclerView.Adapter<SyntheticViewHolder>() {
                 dateBgLl.setBackgroundColor(resources.getColor(R.color.white))
             }
             dateTv.text = dates[position].toString()
+            if (dates.size - position == Constants.PRIME_DELTA) {
+                nearLastPosition()
+            }
         }
 
     override fun getItemCount(): Int = dates.size
